@@ -9,35 +9,35 @@ import java.util.Optional;
  */
 public class BinarySearcher {
 
-  /**
-   * using integer indexes - limits the size of the potential list size(index)
-   *
-   * Binary Search
-   * Searches ordered data.
-   * For n options the search steps is log n.
-   * n = 128
-   * log 128 = 7 steps required to find target
-   **/
-  public Optional<Integer> search(List<Integer> list, int target) {
-    int low = 0;
-    int high = list.size() - 1;
+    /**
+     * Array And ArrayLists use integer indexes.
+     * This limits the size of the list.
+     * Maximum list index value: 2,147,483,647
+     *
+     * Binary Search Searches ordered data.
+     * For n options the search steps is log n.
+     * n = 128
+     * log 128 = 7 steps required to find target.
+     */
+    public Optional<Integer> search(List<Integer> list, int target) {
+        int low = 0;
+        int high = list.size() - 1;
 
-    while(low < high) {
-        int mid = low + high;
-        int guess = list.get(mid);
+        while (low <= high) {
+            int mid = (low + high)/2;
+            int guess = list.get(mid);
 
-        if (guess > target) {
-            high = mid - 1;
+            if (guess == target) {
+                return Optional.of(mid);
+            }
+
+            if (guess > target) {
+                System.out.println("Step: guess > target. Mid: " + mid);
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
         }
-
-        if (guess < target) {
-            low = mid + 1;
-        }
-
-        if (guess == target) {
-            return Optional.of(mid);
-        }
+        return Optional.empty();
     }
-    return Optional.empty();
-  }
 }

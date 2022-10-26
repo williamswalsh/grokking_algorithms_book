@@ -16,36 +16,60 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 class BinarySearcherTest {
 
-  @Test
-  void testSearchOddNumbersOnly() {
-    int target = 3;
-    int expectedIndexOfTarget = 1;
-    List<Integer> numbers = Arrays.asList(1, 3, 5, 7, 9);
-    Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+    @Test
+    void testSearchOddNumbersOnly() {
+        int target = 3;
+        int expectedIndexOfTarget = 1;
+        List<Integer> numbers = Arrays.asList(1, 3, 5, 7, 9);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
 
-    assertFalse(indexOfTarget.isEmpty());
-    assertEquals(
-        expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
-  }
+        assertFalse(indexOfTarget.isEmpty());
+        assertEquals(
+                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+    }
 
-  @Test
-  void testSearchOddAndEvenNumbers() {
-    int target = 3;
-    int expectedIndexOfTarget = 2;
-    List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-    Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+    @Test
+    void testSearchOddAndEvenNumbers() {
+        int target = 3;
+        int expectedIndexOfTarget = 2;
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
 
-    assertFalse(indexOfTarget.isEmpty());
-    assertEquals(
-        expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
-  }
+        assertFalse(indexOfTarget.isEmpty());
+        assertEquals(
+                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+    }
 
-  @Test
-  void testSearchTargetNotInList() {
-    int target = 3;
-    List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9);
-    Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+    @Test
+    void testSearchTargetNotInList() {
+        int target = 3;
+        List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
 
-    assertTrue(indexOfTarget.isEmpty());
-  }
+        assertTrue(indexOfTarget.isEmpty());
+    }
+
+    @Test
+    void testSearchTargetTargetLastElement() {
+        int target = 9;
+        int expectedIndexOfTarget = 7;
+        List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+
+        assertFalse(indexOfTarget.isEmpty());
+        assertEquals(
+                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+    }
+
+    @Test
+    void testSearchTargetTargetFirstElement() {
+        int target = 1;
+        int expectedIndexOfTarget = 0;
+        List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+
+        assertFalse(indexOfTarget.isEmpty());
+        assertEquals(
+                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+    }
 }
