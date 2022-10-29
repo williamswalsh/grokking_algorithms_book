@@ -25,7 +25,7 @@ class BinarySearcherTest {
 
         assertFalse(indexOfTarget.isEmpty());
         assertEquals(
-                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+                expectedIndexOfTarget, indexOfTarget.get(), "The index should be the index of the target.");
     }
 
     @Test
@@ -37,7 +37,19 @@ class BinarySearcherTest {
 
         assertFalse(indexOfTarget.isEmpty());
         assertEquals(
-                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+                expectedIndexOfTarget, indexOfTarget.get(), "The index should be the index of the target.");
+    }
+
+    @Test
+    void testSearchEvenNumberOfElements() {
+        int target = 3;
+        int expectedIndexOfTarget = 2;
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+        Optional<Integer> indexOfTarget = new BinarySearcher().search(numbers, target);
+
+        assertFalse(indexOfTarget.isEmpty());
+        assertEquals(
+                expectedIndexOfTarget, indexOfTarget.get(), "The index should be the index of the target.");
     }
 
     @Test
@@ -58,7 +70,7 @@ class BinarySearcherTest {
 
         assertFalse(indexOfTarget.isEmpty());
         assertEquals(
-                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+                expectedIndexOfTarget, indexOfTarget.get(), "The index should be the index of the target.");
     }
 
     @Test
@@ -70,6 +82,6 @@ class BinarySearcherTest {
 
         assertFalse(indexOfTarget.isEmpty());
         assertEquals(
-                expectedIndexOfTarget, indexOfTarget.get(), "The result should contain the target.");
+                expectedIndexOfTarget, indexOfTarget.get(), "The index should be the index of the target.");
     }
 }
