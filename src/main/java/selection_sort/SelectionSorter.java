@@ -24,7 +24,7 @@ public class SelectionSorter implements Sorter {
     private int findSmallest(int[] arrToSort, int startingIndex) {
         int smallestNumIndex = startingIndex;
 
-        for (int i = startingIndex; i < arrToSort.length; i++) {
+        for (int i = startingIndex + 1; i < arrToSort.length; i++) {
             if (arrToSort[i] < arrToSort[smallestNumIndex]) {
                 smallestNumIndex = i;
             }
