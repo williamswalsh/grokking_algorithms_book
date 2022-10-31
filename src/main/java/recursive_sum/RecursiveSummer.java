@@ -9,8 +9,8 @@ import java.util.Arrays;
 public class RecursiveSummer implements Summer {
 
     public int sum(int[] arr) {
-        if (arr.length == 0) {
-            return 0;
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("The array passed to sum method is null or has a size of 0.");
         }
         if (arr.length == 1) {
             return arr[0];
