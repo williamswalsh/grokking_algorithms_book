@@ -1,6 +1,7 @@
-package selection_sort;
+package sorting.selection_sort;
 
 import org.junit.jupiter.api.Test;
+import sorting.selection_sort.SelectionSorter;
 
 import static org.junit.jupiter.api.Assertions.*;
 

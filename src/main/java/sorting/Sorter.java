@@ -1,4 +1,4 @@
-package selection_sort;
+package sorting;
 
 /**
  * @author William Walsh

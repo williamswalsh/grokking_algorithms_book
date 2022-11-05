@@ -1,4 +1,6 @@
-package selection_sort;
+package sorting.selection_sort;
+
+import sorting.Sorter;
 
 /**
  * @author William Walsh
