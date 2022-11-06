@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.Queue;
 
 /**
+ * This class performs Breadth first search on a unidirectional graph.
+ * This algorithm can be used to solve the "Shortest path from A to B" problems.
+ *
  * @author William Walsh
  * @version 06 Nov 2022
  */
