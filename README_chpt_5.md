@@ -1,6 +1,7 @@
 ## Hash Tables
 
 - Made up of a hash fx and an array.
+- Hash tables have no ordering of keys.
 - Can be used to model relationships
 - Creates a mapping from one item to another.
 
@@ -36,9 +37,11 @@ Load Factor = -----------------------------
 </pre>
 - The lower bound is 0 - the array is empty.
 - The upper bound is not 1 - which would mean that the array is full.
-- The upper bound can be greater than 1.  
-  If the Load factor is 2 it means that there are twice as many elements stored in hash table as there are in the underlying array. This can only happen if Linked Lists are pointed at from the hash table values. Each value in array could have a linked list with 2 values.
-- If the load factor is 0.7 - then the underlying array should be increased.
+- The upper bound can be greater than 1, only for Multi-map data structures.    
+  - If the Load factor is 2 it means that there are twice as many elements stored in hash table as there  are in the underlying array.
+  - This can only happen if Linked Lists are pointed at from the hash table values.
+  - Each value in array could have a linked list with 2 values.
+- If the load factor is 0.7 - then the underlying array should be increased.  
   Normally this is achieved by doubling the size of the underlying array.
 - Keeping the load factor below 0.7, helps to decrease the probability of a collision.
 
@@ -46,12 +49,8 @@ Load Factor = -----------------------------
 - This is when servers will remember website data so that it doesn't require recreating the webpage.
 - Login Pages can be cached to local servers to enable faster user 
 
-
-
-
 ### Performance
 - Reads: O(1) - Constant Time - growth of n - doesn't influence runtime
 - Writes: O(1) - Constant Time - growth of n - doesn't influence runtime
 - Inserts: O(1) - Constant Time - growth of n - doesn't influence runtime
 - Deletes: O(1) - Constant Time - growth of n - doesn't influence runtime
-
