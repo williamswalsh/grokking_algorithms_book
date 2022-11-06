@@ -1,12 +1,13 @@
 from collections import deque
 
+
 def search(name):
     # Construct double ended queue deque(Pronounced like cheque)
     search_queue = deque()
 
     search_queue += graph[name]
-    
-    # Need this to avoid infinite loops relating to 2 way relationships A -> B, B -> A 
+
+    # Need this to avoid infinite loops relating to 2 way relationships A -> B, B -> A
     searched = []
 
     while search_queue:
@@ -27,6 +28,7 @@ def search(name):
 def person_is_seller(name):
     return name[-1] == "m"
 
+
 if __name__ == "__main__":
     graph = {}
     graph["you"] = ["alice", "bob", "claire"]
@@ -41,4 +43,3 @@ if __name__ == "__main__":
     # Search starting from the "you" node in the graph
     # Search radiates out from this node.
     search("you")
-
