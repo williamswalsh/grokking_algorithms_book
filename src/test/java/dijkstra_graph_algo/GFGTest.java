@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @author William Walsh
  * @version 12 Nov 2022
@@ -23,15 +21,15 @@ class GFGTest {
         // connected edges by declaring List class object
         // Declaring object of type List<Node>
         List<List<Node>> adj
-                = new ArrayList<List<Node> >();
+                = new ArrayList<>();
 
         // Initialize list for every node
         for (int i = 0; i < numVertices; i++) {
-            List<Node> item = new ArrayList<Node>();
+            List<Node> item = new ArrayList<>();
             adj.add(item);
         }
 
-        // Inputs for the GFG(dpq) graph
+        // Inputs for the GFG(searcher) graph
         adj.get(0).add(new Node(1, 9));
         adj.get(0).add(new Node(2, 6));
         adj.get(0).add(new Node(3, 5));
@@ -39,16 +37,15 @@ class GFGTest {
         adj.get(2).add(new Node(1, 2));
         adj.get(2).add(new Node(3, 4));
 
-        // Calculating the single source shortest path
-        GFG dpq = new GFG(numVertices);
-        dpq.dijkstra(adj, source);
+        DAGSearcher2 searcher = new DAGSearcher2(numVertices);
+        int[] distance = searcher.dijkstra(adj, source);
 
         // Printing the shortest path to all the nodes
         // from the source node
         System.out.println("The shorted path from node :");
 
-        for (int i = 0; i < dpq.dist.length; i++)
+        for (int i = 0; i < distance.length; i++)
             System.out.println(source + " to " + i + " is "
-                    + dpq.dist[i]);
+                    + distance[i]);
     }
 }
