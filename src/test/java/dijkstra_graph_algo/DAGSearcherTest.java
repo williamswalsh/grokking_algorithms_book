@@ -2,12 +2,8 @@ package dijkstra_graph_algo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author William Walsh
@@ -15,81 +11,41 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DAGSearcherTest {
 
-    public static final int NUMBER_OF_VERTICES = 5;
-
-    // @Test
-    // void testSearch() {
-    //     // Create an array of linked lists - to represent the graph
-    //     LinkedList<Node>[] vertices = new LinkedList[NUMBER_OF_VERTICES];
-    //     vertices[0] = new LinkedList<>();
-    //
-    //     // create map to track weights
-    //     Map<Character, Integer> charWeights = new HashMap<>();
-    //
-    //     // create a map to track parents
-    //     Map<Character, Character> parents = new HashMap<>();
-    //
-    //     // Target to find the shortest path of.
-    //     char targetNodeId = 'd';
-    //
-    //     System.out.println("Shortest Path: " + new DAGSearcher().search(vertices, charWeights, parents, targetNodeId));
-    // }
-
     @Test
-    void testFindLowestCostNode() {
-        Map<Character, Integer> charWeights = new HashMap<>();
-        charWeights.put('a', 3);
-        charWeights.put('b', 8);
-        charWeights.put('c', 19);
-        charWeights.put('d', 2);
+    void testDijkstraAlgorithm()
+    {
+        int numVertices = 5;
+        int source = 0;
 
-        char lowestCostNodeId = new DAGSearcher().findLowestCostNode(charWeights);
+        // Adjacency list representation of the
+        // connected edges by declaring List class object
+        // Declaring object of type List<Node>
+        List<List<Node>> adj
+                = new ArrayList<>();
 
-        assertEquals('d', lowestCostNodeId);
-        assertEquals(2, charWeights.get(lowestCostNodeId));
+        // Initialize list for every node
+        for (int i = 0; i < numVertices; i++) {
+            List<Node> item = new ArrayList<>();
+            adj.add(item);
+        }
+
+        // Inputs for the GFG(searcher) graph
+        adj.get(0).add(new Node(1, 9));
+        adj.get(0).add(new Node(2, 6));
+        adj.get(0).add(new Node(3, 5));
+        adj.get(0).add(new Node(4, 3));
+        adj.get(2).add(new Node(1, 2));
+        adj.get(2).add(new Node(3, 4));
+
+        DAGSearcher searcher = new DAGSearcher(numVertices);
+        int[] distance = searcher.search(adj, source);
+
+        // Printing the shortest path to all the nodes
+        // from the source node
+        System.out.println("The shorted path from node :");
+
+        for (int i = 0; i < distance.length; i++)
+            System.out.println(source + " to " + i + " is "
+                    + distance[i]);
     }
-
-    @Test
-    void testFindLowestCostNodeDifferentWeights() {
-        Map<Character, Integer> charWeights = new HashMap<>();
-        charWeights.put('a',7);
-        charWeights.put('b',8);
-        charWeights.put('c',1);
-        charWeights.put('d',3);
-
-        char lowestCostNodeId = new DAGSearcher().findLowestCostNode(charWeights);
-
-        assertEquals('c', lowestCostNodeId);
-        assertEquals(1, charWeights.get(lowestCostNodeId));
-    }
-
-    @Test
-    void testFindLowestCostNodeWhenHasNegativeNumbers() {
-        Map<Character, Integer> charWeights = new HashMap<>();
-        charWeights.put('a',-7);
-        charWeights.put('b',8);
-        charWeights.put('c',-11);
-        charWeights.put('d',4);
-
-        char lowestCostNodeId = new DAGSearcher().findLowestCostNode(charWeights);
-
-        assertEquals('c', lowestCostNodeId);
-        assertEquals(-11, charWeights.get(lowestCostNodeId));
-    }
-
-    @Test
-    void testFindLowestCostNodeWhenAllZeros() {
-        Map<Character, Integer> charWeights = new HashMap<>();
-        charWeights.put('a',0);
-        charWeights.put('b',0);
-        charWeights.put('c',0);
-        charWeights.put('d',0);
-
-        char lowestCostNodeId = new DAGSearcher().findLowestCostNode(charWeights);
-
-        assertEquals('a', lowestCostNodeId);
-        assertEquals(0, charWeights.get(lowestCostNodeId));
-    }
-
-
 }

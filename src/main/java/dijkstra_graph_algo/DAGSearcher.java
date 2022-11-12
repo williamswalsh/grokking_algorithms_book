@@ -13,7 +13,7 @@ import java.util.Set;
  * @author William Walsh
  * @version 12 Nov 2022
  */
-public class DAGSearcher2 {
+public class DAGSearcher {
 
     private int numOfNodes;
     private int[] distance;
@@ -21,14 +21,14 @@ public class DAGSearcher2 {
     private PriorityQueue<Node> priorityQueue;
     private Set<Integer> processedIds;
 
-    public DAGSearcher2(int numOfNodes) {
+    public DAGSearcher(int numOfNodes) {
         this.numOfNodes = numOfNodes;
         this.distance = new int[numOfNodes];
         this.priorityQueue = new PriorityQueue<>(numOfNodes, new Node());
         this.processedIds = new HashSet<>();
     }
 
-    public int[] dijkstra(List<List<Node> > adj, int src) {
+    public int[] search(List<List<Node> > adj, int src) {
         this.adjacencyList = adj;
 
         for (int i = 0; i < numOfNodes; i++) {
