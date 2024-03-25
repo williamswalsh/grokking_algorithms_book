@@ -9,10 +9,13 @@ there is enough space.
 So adding new items to an array can be slowwwww. 
 Arrays can hold large chunks by initialising them with a large size.  
 For 10000 elements -> arrays require 10000 memory slots together.   
-The memory locations are contiguous, therefore they are predeterminal.  
+The memory locations are contiguous, therefore they are predetermined.  
 **Random Access:** You can determine the memory location without linear traversal.
 
-**N.B.:** Binary Search needs random access. 
+**N.B.:** Binary Search needs random access.  
+**N.B.:** For insertion - add new memory location to end - if available(otherwise move whole array).  
+          All elements after inserted element have to be shifted by 1.
+
 
 ### Linked list
 Your items are not contiguous.  
