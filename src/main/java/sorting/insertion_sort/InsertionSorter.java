@@ -2,6 +2,10 @@ package sorting.insertion_sort;
 
 import sorting.Sorter;
 
+/**
+ * @author William Walsh
+ * @version 29 Jun 2024
+ */
 public class InsertionSorter implements Sorter {
 
     @Override
