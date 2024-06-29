@@ -1,7 +1,6 @@
 package sorting.selection_sort;
 
 import org.junit.jupiter.api.Test;
-import sorting.selection_sort.SelectionSorter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +15,7 @@ class SelectionSorterTest {
     @Test
     void testSortWithEvenNumberOfNumbers() {
         int[] arrToSort = {2, 0, 1, 3};
-        int [] expectedArr = new int[]{0, 1, 2, 3};
+        int [] expectedArr = {0, 1, 2, 3};
 
         new SelectionSorter().sort(arrToSort);
 
@@ -26,7 +25,7 @@ class SelectionSorterTest {
     @Test
     void testSortWithOddNumberOfNumbers() {
         int[] arrToSort = {2, 0, 1, 3, 4};
-        int [] expectedArr = new int[]{0, 1, 2, 3, 4};
+        int [] expectedArr = {0, 1, 2, 3, 4};
 
         new SelectionSorter().sort(arrToSort);
 
@@ -36,7 +35,7 @@ class SelectionSorterTest {
     @Test
     void testSortWithNegativeNumbers() {
         int[] arrToSort = {-2, 0, -1, -3, -4};
-        int [] expectedArr = new int[]{-4, -3, -2, -1, 0};
+        int [] expectedArr = {-4, -3, -2, -1, 0};
 
         new SelectionSorter().sort(arrToSort);
 
@@ -46,7 +45,7 @@ class SelectionSorterTest {
     @Test
     void testSortWithDuplicateNumbers() {
         int[] arrToSort = {2, 0, 2, 0, 4};
-        int [] expectedArr = new int[]{0, 0, 2, 2, 4};
+        int [] expectedArr = {0, 0, 2, 2, 4};
 
         new SelectionSorter().sort(arrToSort);
 
