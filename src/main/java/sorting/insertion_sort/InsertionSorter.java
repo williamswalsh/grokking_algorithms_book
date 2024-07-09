@@ -27,7 +27,6 @@ public class InsertionSorter implements Sorter {
 //            While the second index j is >=0
 //            AND
 //            the current element is less than the j'th element
-
             while(j >= 0 && current < arrToSort[j]) {
 //            copy the value from the j'th position to the j'th+1 position
                 arrToSort[j+1] = arrToSort[j];
