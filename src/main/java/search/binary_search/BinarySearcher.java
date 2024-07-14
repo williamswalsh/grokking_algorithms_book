@@ -1,4 +1,4 @@
-package binary_search;
+package search.binary_search;
 
 import java.util.List;
 import java.util.Optional;

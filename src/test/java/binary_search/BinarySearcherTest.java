@@ -1,6 +1,7 @@
 package binary_search;
 
 import org.junit.jupiter.api.Test;
+import search.binary_search.BinarySearcher;
 
 import java.util.Arrays;
 import java.util.List;
