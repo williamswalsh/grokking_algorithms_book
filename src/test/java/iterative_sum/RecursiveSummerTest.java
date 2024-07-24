@@ -1,12 +1,14 @@
-package recursive_sum;
+package iterative_sum;
 
 import org.junit.jupiter.api.Test;
+import recursive_sum.RecursiveSummer;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author William Walsh
- * @version 31 Oct 2022
+ * @version 29 Jun 2024
  */
 class RecursiveSummerTest {
     private static final RecursiveSummer summer = new RecursiveSummer();

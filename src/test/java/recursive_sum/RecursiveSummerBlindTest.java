@@ -1,17 +1,16 @@
-package iterative_sum;
+package recursive_sum;
 
 import org.junit.jupiter.api.Test;
-import recursive_sum.IterativeSummer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author William Walsh
- * @version 29 Jun 2024
+ * @version 31 Oct 2022
  */
-class IterativeSummerTest {
-    private static final IterativeSummer summer = new IterativeSummer();
+class RecursiveSummerBlindTest {
+    private static final RecursiveSummerBlind summer = new RecursiveSummerBlind();
 
     @Test
     void testSumWithEvenNumberOfNumbers() {

@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author William Walsh
  * @version 31 Oct 2022
  */
-public class IterativeSummer implements Summer {
+public class RecursiveSummer implements Summer {
 
     public int sum(int[] arr) {
         if (arr == null || arr.length == 0) {

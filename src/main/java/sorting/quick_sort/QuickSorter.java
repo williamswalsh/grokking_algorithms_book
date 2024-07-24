@@ -6,8 +6,8 @@ import java.util.Random;
 
 /**
  * Quicksort sorts "in place".
- * The space complexity is much less than merge sort which requires 0(n),
- * (it requires a separate array to perform the merging)
+ * The space complexity is much less than merge sort which requires 0(n) space,
+ * (mergesort requires a separate array to perform the merging)
  *
  * @author William Walsh
  * @version 03 Nov 2022
