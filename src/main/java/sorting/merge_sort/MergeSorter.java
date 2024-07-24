@@ -1,6 +1,9 @@
-package sorting;
+package sorting.merge_sort;
 
-public class MergeSorter implements Sorter{
+import sorting.Sorter;
+
+public class MergeSorter implements Sorter {
+
 
     @Override
     public int[] sort(int[] arrToSort) {
@@ -17,9 +20,9 @@ public class MergeSorter implements Sorter{
         return arrToSort;
     }
 
-    public void merge(int[] arrToSort, int left, int middle, int right) {
-        int n1 = middle - left + 1;     // 1 offset - zero based indexing
-        int n2 = right - middle;
+    public void merge(int[] arrToSort, int left, int mid, int right) {
+        int n1 = mid - left + 1;     // 1 offset - zero based indexing
+        int n2 = right - mid;
 
         int[] lArr = new int[n1];
         int[] rArr = new int[n2];
@@ -28,7 +31,7 @@ public class MergeSorter implements Sorter{
             lArr[i] = arrToSort[left + i];
         }
         for (int j = 0; j < rArr.length; j++) {
-            rArr[j] = arrToSort[middle + 1 + j];        // 1 offset
+            rArr[j] = arrToSort[mid + 1 + j];        // 1 offset
         }
 
         int l = 0;
@@ -38,13 +41,12 @@ public class MergeSorter implements Sorter{
         while (n < totalLength && l < lArr.length &&  m < rArr.length) {
             if (lArr[l] < rArr[m]) {
                 arrToSort[n] = lArr[l];
-                n++;
                 l++;
             } else {
                 arrToSort[n] = rArr[m];
-                n++;
                 m++;
             }
+            n++;
         }
         while (n < totalLength && l < lArr.length) {
             arrToSort[n] = lArr[l];
