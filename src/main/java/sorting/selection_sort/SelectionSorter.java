@@ -9,10 +9,10 @@ import sorting.Sorter;
 public class SelectionSorter implements Sorter {
 
     @Override
-    public int[] sort(int[] arrToSort) {
+    public int[] sort(int[] a) {
         // If array has length 0 -> it can't be sorted -> return array
         // If array has length 1 -> it is already sorted -> return array
-        if (arrToSort.length == 0 || arrToSort.length == 1) return arrToSort;
+        if (a.length == 0 || a.length == 1) return a;
 
         // second index to find minimum index
         int j;
@@ -24,7 +24,7 @@ public class SelectionSorter implements Sorter {
         int swapVal;
 
         // Iterate over array, stop at second last element
-        for (int i = 0; i < arrToSort.length-1; i++) {
+        for (int i = 0; i < a.length-1; i++) {
 
             // second index
             j = i + 1;
@@ -33,9 +33,9 @@ public class SelectionSorter implements Sorter {
             min = i;
 
             // This while loop will iterate up through the array until it reaches the last element.
-            while (j < arrToSort.length) {
+            while (j < a.length) {
                 // if j < min -> set j to min
-                if (arrToSort[j] < arrToSort[min]) {
+                if (a[j] < a[min]) {
                     min = j;
                 }
                 // increment j
@@ -43,11 +43,11 @@ public class SelectionSorter implements Sorter {
             }
 
             // once the min index is identified swap the min with the i'th index.
-            swapVal = arrToSort[i];
-            arrToSort[i] = arrToSort[min];
-            arrToSort[min] = swapVal;
+            swapVal = a[i];
+            a[i] = a[min];
+            a[min] = swapVal;
         }
-        return arrToSort;
+        return a;
     }
 
     public int[] sortInMethods(int[] arrToSort) {

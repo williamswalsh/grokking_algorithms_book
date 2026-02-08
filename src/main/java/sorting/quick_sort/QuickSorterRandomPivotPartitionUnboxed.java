@@ -8,14 +8,14 @@ import java.util.Random;
  * @author William Walsh
  * @version 03 Nov 2022
  */
-public class QuickSorter3 implements Sorter {
+public class QuickSorterRandomPivotPartitionUnboxed implements Sorter {
 
     private final Random random = new Random();
 
     @Override
-    public int[] sort(int[] arr) {
-        sort(arr, 0, arr.length -1);
-        return arr;
+    public int[] sort(int[] a) {
+        sort(a, 0, a.length - 1);
+        return a;
     }
 
     private void sort(int[] arr, int lowIndex, int highIndex) {
@@ -36,7 +36,7 @@ public class QuickSorter3 implements Sorter {
             while (arr[leftPtr] <= pivot && leftPtr < rightPtr) {
                 leftPtr++;
             }
-            while (pivot <= arr[rightPtr] && leftPtr < rightPtr) {
+            while (arr[rightPtr] >= pivot && leftPtr < rightPtr) {
                 rightPtr--;
             }
             // Swap when both left and right ptrs have "swappable" values

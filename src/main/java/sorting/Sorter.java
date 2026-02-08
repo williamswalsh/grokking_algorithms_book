@@ -5,5 +5,5 @@ package sorting;
  * @version 30 Oct 2022
  */
 public interface Sorter {
-    int[] sort(int[] arrToSort);
+    int[] sort(int[] a);
 }

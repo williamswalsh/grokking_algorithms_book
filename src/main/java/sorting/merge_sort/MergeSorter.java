@@ -6,8 +6,8 @@ public class MergeSorter implements Sorter {
 
 
     @Override
-    public int[] sort(int[] arrToSort) {
-        return mergeSort(arrToSort, 0, arrToSort.length - 1);
+    public int[] sort(int[] a) {
+        return mergeSort(a, 0, a.length - 1);
     }
 
     public int[] mergeSort(int[] arrToSort, int low, int high) {

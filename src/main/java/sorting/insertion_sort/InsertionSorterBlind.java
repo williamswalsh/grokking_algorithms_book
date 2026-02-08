@@ -5,18 +5,18 @@ import sorting.Sorter;
 public class InsertionSorterBlind implements Sorter {
 
     @Override
-    public int[] sort(int[] arrToSort) {
+    public int[] sort(int[] a) {
         int i, curr;
 
-        for (int j = 1; j < arrToSort.length; j++) {
+        for (int j = 1; j < a.length; j++) {
             i = j - 1;
-            curr = arrToSort[j];
-            while (i >= 0 && arrToSort[i] > curr) {
-                arrToSort[i+1] = arrToSort[i];
+            curr = a[j];
+            while (i >= 0 && a[i] > curr) {
+                a[i+1] = a[i];
                 i--;
             }
-            arrToSort[i+1] = curr;
+            a[i+1] = curr;
         }
-        return arrToSort;
+        return a;
     }
 }
