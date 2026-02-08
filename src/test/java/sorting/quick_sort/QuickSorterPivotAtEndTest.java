@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuickSorterInefficientImplementationTest {
+class QuickSorterPivotAtEndTest {
 
     private static final String ASSERTION_ERROR_MESSAGE = "Arrays are not equal and therefore one is not sorted correctly.";
 
@@ -12,8 +12,8 @@ class QuickSorterInefficientImplementationTest {
     void sort() {
         int[] arrToSort = {2, 0, 1, 3};
         int[] expectedArr = {0, 1, 2, 3};
-
-        int[] actualArr = QuickSorterInefficientImplementation.sort(arrToSort);
+        
+        int[] actualArr = new QuickSorterPivotAtEnd().sort(arrToSort);
         assertArrayEquals(expectedArr, actualArr, ASSERTION_ERROR_MESSAGE);
     }
 
@@ -22,7 +22,7 @@ class QuickSorterInefficientImplementationTest {
         int[] arrToSort = {2, 0, 1, 3, 2, 0, 1, 3, 10, 8, 7};
         int[] expectedArr = {0, 0, 1, 1, 2, 2, 3, 3, 7, 8 ,10};
 
-        int[] actualArr = QuickSorterInefficientImplementation.sort(arrToSort);
+        int[] actualArr = new QuickSorterPivotAtEnd().sort(arrToSort);
         assertArrayEquals(expectedArr, actualArr, ASSERTION_ERROR_MESSAGE);
     }
 
@@ -31,7 +31,7 @@ class QuickSorterInefficientImplementationTest {
         int[] arrToSort = {2, 0, 1, 3, -4, -7};
         int[] expectedArr = {-7, -4, 0, 1, 2, 3};
 
-        int[] actualArr = QuickSorterInefficientImplementation.sort(arrToSort);
+        int[] actualArr = new QuickSorterPivotAtEnd().sort(arrToSort);
         assertArrayEquals(expectedArr, actualArr, ASSERTION_ERROR_MESSAGE);
     }
 }

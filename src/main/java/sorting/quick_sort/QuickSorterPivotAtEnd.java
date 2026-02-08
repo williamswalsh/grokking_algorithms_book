@@ -23,7 +23,7 @@ public class QuickSorterPivotAtEnd implements Sorter {
         return a;
     }
 
-    public void sort(int[] arr, int lowIndex, int highIndex) {
+    private void sort(int[] arr, int lowIndex, int highIndex) {
         if (lowIndex >= highIndex) {
             return;
         }
